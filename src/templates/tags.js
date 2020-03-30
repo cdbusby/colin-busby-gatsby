@@ -10,7 +10,7 @@ import '../assets/main.css'
 const TagsTemplate = ({ data }) => {
   return (
       <Layout home={false}>
-        <SEO title={`Tag: ${data.tag.name}`} />
+        <SEO title={`Tag: ${data.tag.name}`} description={`Tag listing page for ${data.tag.name}`} />
 
         <div className="max-w-3xl mx-auto">
           <div className="wysiwyg">

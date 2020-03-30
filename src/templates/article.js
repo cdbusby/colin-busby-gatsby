@@ -48,8 +48,7 @@ const ArticleTemplate = ({data}) => {
 
   return (
       <Layout home={false}>
-        <SEO title={data.article.title}/>
-        <SEO description={metaDescription}/>
+        <SEO title={data.article.title} description={metaDescription}/>
         <div className="max-w-3xl m-auto">
           <h1>{data.article.title}</h1>
         </div>
