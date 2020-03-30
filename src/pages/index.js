@@ -33,7 +33,7 @@ export default IndexPage
 
 export const query = graphql`
   query allNodeArticle {
-    allNodeArticle {
+    allNodeArticle(sort: {fields: created, order: DESC}) {
       edges {
         node {
           id
