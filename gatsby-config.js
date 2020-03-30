@@ -7,6 +7,7 @@ module.exports = {
     title: `Colin Busby`,
     description: `Drupal 8 snippets and articles.`,
     author: `Colin Busby`,
+    siteUrl: `https://www.colinbusby.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -17,6 +18,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
