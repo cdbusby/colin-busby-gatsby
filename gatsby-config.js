@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Colin Busby`,
@@ -29,12 +33,16 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     {
-      resolve: 'gatsby-source-drupal',
+      resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: 'https://drupal.colinbusby.com/',
-        apiBase: 'jsonapi', // endpoint of Drupal server
+        baseUrl: `https://drupal.colinbusby.com/`,
+        apiBase: `jsonapi`, // endpoint of Drupal server
+        // basicAuth: {
+        //   username: process.env.BASIC_AUTH_USERNAME,
+        //   password: process.env.BASIC_AUTH_PASSWORD,
+        // },
       },
     },
     // Add after these plugins if used
@@ -42,10 +50,11 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true, // Print removed selectors and processed file names
-        // develop: true, // Enable while using `gatsby develop`
+        develop: true, // Enable while using `gatsby develop`
         tailwind: true, // Enable tailwindcss support
-        // whitelist: ['whitelist'], // Don't remove this selector
-        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        whitelist: ["whitelist", "html", "body"],
+        whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
+        ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       }
     }

@@ -1,9 +1,9 @@
-import {graphql} from "gatsby"
+import { graphql } from "gatsby"
 import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Card from "../components/card"
+import Posts from "../components/posts";
 
 import '../assets/main.css'
 
@@ -16,11 +16,7 @@ const TagsTemplate = ({ data }) => {
           <div className="wysiwyg">
             <h2>Tag: {data.tag.name}</h2>
           </div>
-          <div className="flex flex-wrap -mx-4">
-            {data.tag.relationships.node__article.map((node) => (
-                <Card data={node} />
-            ))}
-          </div>
+          <Posts posts={data.tag.relationships.node__article} columns={`4`} />
         </div>
       </Layout>
   )
