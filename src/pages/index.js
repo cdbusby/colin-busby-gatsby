@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => {
           <div className="wysiwyg text-center">
             <h2>Recent Articles</h2>
           </div>
-          <Posts posts={data.allNodeArticle.edges} columns={`4`} />
+          <Posts posts={data.allNodeArticle.edges} gutter={`4`} />
         </div>
       </Layout>
   )

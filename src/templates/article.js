@@ -22,21 +22,22 @@ const ArticleTemplate = ({data}) => {
   var tags;
 
   if (data.article.field_links.length) {
-    relatedLinks = <div className="my-6"><span className="mr-2 font-bold">Related:</span>
+    relatedLinks = <div className="w-full sm:w-1/2 my-4 px-4"><span className="block mb-1 font-bold">Related</span><ul>
       {data.article.field_links.map((link) => (
-          <a href={ link.uri } className="">{ link.title }</a>
+          <li><a href={ link.uri } className="mr-2">{ link.title }</a></li>
       ))}
+    </ul>
     </div>
   }
 
   if (data.article.field_version) {
-    testedAgainst = <div className="my-6"><span className="mr-2 font-bold">Tested against:</span>
+    testedAgainst = <div className="w-full sm:w-1/2 my-4 px-4"><span className="block mb-1 font-bold">Tested against</span>
       <span className="">Drupal { data.article.field_version }</span>
     </div>
   }
 
   if (data.article.relationships.field_tags.length) {
-    tags = <div className="my-6"><span className="mr-2 font-bold">Tags:</span>
+    tags = <div className="w-full sm:w-1/2 my-4 px-4"><span className="block mb-1 font-bold">Tags</span>
       {data.article.relationships.field_tags.map((tag) => (
           <Link to={`/tags/${tag.name}`} className="mr-2 py-1 px-2 rounded-md bg-indigo-600 text-white hover:text-white text-sm no-underline">{ tag.name }</Link>
       ))}
@@ -55,10 +56,12 @@ const ArticleTemplate = ({data}) => {
         ))}
 
         <div className="max-w-3xl mt-12 mx-auto px-6 py-1 bg-indigo-100 shadow-lg rounded-md">
-          <div className="my-6"><span className="font-bold">Posted:</span> {data.article.created}</div>
-          { relatedLinks }
-          { testedAgainst }
-          { tags }
+          <div className="flex flex-wrap -mx-4">
+            <div className="w-full sm:w-1/2 my-4 px-4"><span className="block mb-1 font-bold">Posted</span> {data.article.created}</div>
+            { testedAgainst }
+            { relatedLinks }
+            { tags }
+          </div>
         </div>
       </Layout>
   )

@@ -16,7 +16,7 @@ const TagsTemplate = ({ data }) => {
           <div className="wysiwyg">
             <h2>Tag: {data.tag.name}</h2>
           </div>
-          <Posts posts={data.tag.relationships.node__article} columns={`4`} />
+          <Posts posts={data.tag.relationships.node__article} gutter={`4`} />
         </div>
       </Layout>
   )
