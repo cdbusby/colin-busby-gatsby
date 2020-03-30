@@ -9,6 +9,8 @@ import SEO from "../components/seo";
 import '../assets/main.css'
 
 const ArticleTemplate = ({data}) => {
+  var metaDescription = data.article.field_teaser.processed.replace(/(<([^>]+)>)/ig,"")
+
   function renderLayout(layout) {
     if (layout.__typename === 'paragraph__text') {
       return <Text data={layout}/>
@@ -24,7 +26,7 @@ const ArticleTemplate = ({data}) => {
   if (data.article.field_links.length) {
     relatedLinks = <div className="w-full sm:w-1/2 my-4 px-4"><span className="block mb-1 font-bold">Related</span><ul>
       {data.article.field_links.map((link) => (
-          <li><a href={ link.uri } className="mr-2" target={`_blank`}>{ link.title }</a></li>
+          <li><a href={ link.uri } className="mr-2" target={`_blank`} rel={`noopener`}>{ link.title }</a></li>
       ))}
     </ul>
     </div>
@@ -47,6 +49,7 @@ const ArticleTemplate = ({data}) => {
   return (
       <Layout home={false}>
         <SEO title={data.article.title}/>
+        <SEO description={metaDescription}/>
         <div className="max-w-3xl m-auto">
           <h1>{data.article.title}</h1>
         </div>
@@ -77,6 +80,9 @@ export const query = graphql`
       field_links {
         uri
         title
+      }
+      field_teaser {
+        processed
       }
       field_version
       relationships {

@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types";
-import Posts from "./posts";
 
 const Card = ({ data, gutter }) => {
   return (

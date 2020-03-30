@@ -28,7 +28,7 @@ const Layout = ({ children, home }) => {
       <main className="">{children}</main>
       <footer className="max-w-3xl mt-6 m-auto py-6 border-t border-gray-300">
         <div className="">
-          <p>© {new Date().getFullYear()}, Built with <a href="https://www.drupal.org">Drupal</a> &amp; <a href="https://www.gatsbyjs.org">Gatsby</a>.</p>
+          <p>© {new Date().getFullYear()}, Built with <a href="https://www.drupal.org" target={`_blank`} rel={`noopener`}>Drupal</a> &amp; <a href="https://www.gatsbyjs.org" target={`_blank`} rel={`noopener`}>Gatsby</a>.</p>
         </div>
       </footer>
     </div>
