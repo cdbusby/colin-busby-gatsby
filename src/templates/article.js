@@ -24,7 +24,7 @@ const ArticleTemplate = ({data}) => {
   if (data.article.field_links.length) {
     relatedLinks = <div className="w-full sm:w-1/2 my-4 px-4"><span className="block mb-1 font-bold">Related</span><ul>
       {data.article.field_links.map((link) => (
-          <li><a href={ link.uri } className="mr-2">{ link.title }</a></li>
+          <li><a href={ link.uri } className="mr-2" target={`_blank`}>{ link.title }</a></li>
       ))}
     </ul>
     </div>
