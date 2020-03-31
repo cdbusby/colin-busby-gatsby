@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   // Query for recipe nodes to use in creating pages.
   return graphql(
-      `
+    `
       {
         articles: allNodeArticle {
           edges {
@@ -46,7 +46,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     `
-  ).then(result => {
+  ).then((result) => {
     if (result.errors) {
       throw result.errors
     }

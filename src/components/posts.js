@@ -1,18 +1,18 @@
 import React from "react"
-import Card from "./card";
-import PropTypes from "prop-types";
+import Card from "./card"
+import PropTypes from "prop-types"
 
 const Posts = ({ posts, gutter }) => {
   function parseNode(post) {
-    return post.node ? post.node : post;
+    return post.node ? post.node : post
   }
 
   return (
-      <div className={`flex flex-wrap -mx-${gutter}`}>
-        {posts.map((node) => (
-            <Card data={parseNode(node)} gutter={gutter} />
-        ))}
-      </div>
+    <div className={`flex flex-wrap -mx-${gutter}`}>
+      {posts.map((node) => (
+        <Card data={parseNode(node)} gutter={gutter} />
+      ))}
+    </div>
   )
 }
 
