@@ -45,6 +45,12 @@ module.exports = {
         // cookieDomain: "example.com",
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.colinbusby.com`,
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
