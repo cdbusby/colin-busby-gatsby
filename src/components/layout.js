@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Layout = ({ children, home }) => {
   const data = useStaticQuery(graphql`
@@ -22,17 +23,21 @@ const Layout = ({ children, home }) => {
         <div className="">
           <p>
             © {new Date().getFullYear()}, Built with{" "}
-            <a href="https://www.drupal.org" target={`_blank`} rel={`noopener`}>
+            <OutboundLink
+              href="https://www.drupal.org"
+              target={`_blank`}
+              rel={`noopener`}
+            >
               Drupal
-            </a>{" "}
+            </OutboundLink>{" "}
             &amp;{" "}
-            <a
+            <OutboundLink
               href="https://www.gatsbyjs.org"
               target={`_blank`}
               rel={`noopener`}
             >
               Gatsby
-            </a>
+            </OutboundLink>
             .
           </p>
         </div>

@@ -1,10 +1,10 @@
 import { Link, graphql } from "gatsby"
 import React from "react"
-
 import Layout from "../components/layout"
 import Text from "../components/text"
 import Code from "../components/code"
 import SEO from "../components/seo"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import "../assets/main.css"
 
@@ -29,18 +29,13 @@ const ArticleTemplate = ({ data }) => {
   if (data.article.field_links.length) {
     relatedLinks = (
       <div className="w-full sm:w-1/2 my-4 px-4">
-        <span className="block mb-1 font-bold">Related</span>
+        <span className="block mb-2 font-bold">Related</span>
         <ul>
           {data.article.field_links.map((link) => (
-            <li>
-              <a
-                href={link.uri}
-                className="mr-2"
-                target={`_blank`}
-                rel={`noopener`}
-              >
+            <li className="mb-2">
+              <OutboundLink href={link.uri} target={`_blank`} rel={`noopener`}>
                 {link.title}
-              </a>
+              </OutboundLink>
             </li>
           ))}
         </ul>
@@ -51,7 +46,7 @@ const ArticleTemplate = ({ data }) => {
   if (data.article.field_version) {
     testedAgainst = (
       <div className="w-full sm:w-1/2 my-4 px-4">
-        <span className="block mb-1 font-bold">Tested against</span>
+        <span className="block mb-2 font-bold">Tested against</span>
         <span className="">Drupal {data.article.field_version}</span>
       </div>
     )
@@ -60,7 +55,7 @@ const ArticleTemplate = ({ data }) => {
   if (data.article.relationships.field_tags.length) {
     tags = (
       <div className="w-full sm:w-1/2 my-4 px-4">
-        <span className="block mb-1 font-bold">Tags</span>
+        <span className="block mb-2 font-bold">Tags</span>
         {data.article.relationships.field_tags.map((tag) => (
           <Link
             to={`/tags/${tag.name}`}
@@ -87,7 +82,7 @@ const ArticleTemplate = ({ data }) => {
       <div className="max-w-3xl mt-12 mx-auto px-6 py-1 bg-indigo-100 shadow-lg rounded-md">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full sm:w-1/2 my-4 px-4">
-            <span className="block mb-1 font-bold">Posted</span>{" "}
+            <span className="block mb-2 font-bold">Posted</span>{" "}
             {data.article.created}
           </div>
           {testedAgainst}
