@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import Teaser from "./teaser";
+import Teaser from "./teaser"
 
 const Card = ({ data, gutter }) => {
   return (

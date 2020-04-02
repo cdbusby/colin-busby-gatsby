@@ -2,14 +2,11 @@ import React from "react"
 
 const Teaser = ({ data }) => {
   if (!data) {
-    return ''
+    return ""
   }
 
   return (
-      <div
-          className="mb-8"
-          dangerouslySetInnerHTML={{ __html: data.value }}
-      />
+    <div className="mb-8" dangerouslySetInnerHTML={{ __html: data.value }} />
   )
 }
 

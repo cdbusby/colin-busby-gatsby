@@ -4,7 +4,7 @@ import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 const Code = ({ data }) => {
   if (!data.field_code) {
-    return ''
+    return ""
   }
 
   return (
