@@ -46,9 +46,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-canonical-urls`,
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
         siteUrl: `https://www.colinbusby.com`,
+        noTrailingSlash: true,
       },
     },
     `gatsby-plugin-sitemap`,
