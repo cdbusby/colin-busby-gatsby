@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Colin Busby`,
-    description: `Drupal 8 snippets and articles.`,
+    description: `A collection of Drupal 8 snippets and articles on topics from entity queries to templating and libraries.`,
     author: `Colin Busby`,
     siteUrl: `https://www.colinbusby.com`,
   },
@@ -87,7 +87,7 @@ module.exports = {
         printRejected: true, // Print removed selectors and processed file names
         develop: false, // Enable while using `gatsby develop`
         tailwind: true, // Enable tailwindcss support
-        whitelist: ["whitelist", "html", "body"],
+        whitelist: ["whitelist", "html", "body", "a"],
         whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
         ignore: ["/ignored.css", "prismjs/", "docsearch.js/"], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders

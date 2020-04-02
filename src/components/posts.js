@@ -3,6 +3,12 @@ import Card from "./card"
 import PropTypes from "prop-types"
 
 const Posts = ({ posts, gutter }) => {
+  if (!posts) {
+    return (
+        <div>No posts matching that tag.</div>
+    )
+  }
+
   function parseNode(post) {
     return post.node ? post.node : post
   }

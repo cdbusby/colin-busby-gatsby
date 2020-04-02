@@ -10,7 +10,7 @@ import "../assets/main.css"
 const IndexPage = ({ data }) => {
   return (
     <Layout home={true}>
-      <SEO title="Home" />
+      <SEO title={`Drupal 8 snippets and articles`} />
 
       <div className="max-w-lg mx-auto mb-12 text-xl leading-8 text-center">
         <p className="text-4xl mb-6">Drupal is hard.</p>

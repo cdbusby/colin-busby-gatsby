@@ -115,6 +115,7 @@ export const query = graphql`
         }
         field_layout {
           ... on paragraph__code {
+            field_language
             field_code
           }
           ... on paragraph__text {

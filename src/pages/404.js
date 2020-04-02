@@ -4,9 +4,11 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import "../assets/main.css"
+
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title={`404: Not found`} />
     <div className="max-w-3xl m-auto">
       <h1>NOT FOUND</h1>
       <p>
