@@ -68,8 +68,5 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# tailwind
-src/assets/main.css
-
 # PhpStorm
 .idea
